@@ -15,7 +15,7 @@ Bienvenue ! Ici vous trouverez tous mes projets Data Analyst.
 - **Partie 5** : Création 3 Dashboards
 - **Partie 6** : Publication Power BI Service
 
-📂 [Voir le projet →](./Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware/)
+📂 [Voir le projet →](./)
 
 ---
 
