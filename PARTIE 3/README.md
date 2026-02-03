@@ -16,13 +16,13 @@
 - ✅ Normaliser devises (USD → INR)
 - ✅ Créer colonnes calculées (profit)
 
-**Durée :** 25-30 minutes
+**Durée :** 22 minutes
 
 ---
 
 ## 📹 Vidéo Tutoriel
 
-[![Voir la vidéo](https://img.shields.io/badge/▶️-YouTube-FF0000?style=for-the-badge&logo=youtube)](LIEN_VIDEO_PARTIE_3)
+[![Voir la vidéo](https://img.shields.io/badge/▶️-YouTube-FF0000?style=for-the-badge&logo=youtube)](https://youtu.be/mf8Tq-DVCGk)
 
 ---
 
@@ -140,9 +140,8 @@ Créez votre modèle de données avec relations optimisées et mesures DAX.
 
 ## 💬 Questions ?
 
-- 💬 Commentaires [vidéo YouTube](LIEN_VIDEO)
-- 🐛 [Issues GitHub](../../issues)
-- 📧 nikiemaboubacar@ngroupmediadigital.com
+- 💬 Commentaires [vidéo YouTube](https://youtu.be/mf8Tq-DVCGk)
+- 📧 nikiemaboubacar@gmail.com
 
 ---
 
