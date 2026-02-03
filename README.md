@@ -64,6 +64,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 │   ├── 📄 DATA/transactions.csv
 │   ├── 📄 Guide_Import_MySQL_PowerBI.pdf
 │   ├── 📄 atliq.pbix
+│   ├── 📄 Screen_StarShema.png
 │   └── 📄 README.md
 │
 ├── 📁 PARTIE 4 - Star Schema
