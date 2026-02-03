@@ -16,13 +16,13 @@
 - ✅ Valider le modèle
 - 📊 Écrire 2 mesures DAX
 
-**Durée :** 20-25 minutes
+**Durée :** 16 minutes
 
 ---
 
 ## 📹 Vidéo Tutoriel
 
-[![Voir la vidéo](https://img.shields.io/badge/▶️-YouTube-FF0000?style=for-the-badge&logo=youtube)](LIEN_VIDEO_PARTIE_4)
+[![Voir la vidéo](https://img.shields.io/badge/▶️-YouTube-FF0000?style=for-the-badge&logo=youtube)](https://youtu.be/R-hUzsPNkSE)
 
 ---
 
@@ -171,27 +171,7 @@ Glisser "Total Profit" → ₹24.7M ✅
 
 ## 📐 Schéma Final
 
-```
-┌──────────┐
-│customers │
-│   (38)   │◄────┐
-└──────────┘     │
-                 │
-┌──────────┐     │    ┌──────────────┐
-│   date   │     └───►│transactions  │
-│ (1,126)  │◄─────────│  (148,395)   │
-└──────────┘          └──────────────┘
-                 ┌────►│              │
-┌──────────┐     │    └──────────────┘
-│ markets  │     │
-│   (17)   │◄────┘
-└──────────┘
-                 
-┌──────────┐
-│ products │
-│  (279)   │◄────────────┘
-└──────────┘
-```
+![STAR SCHEMA - ](PARTIE%203/Screen_StarShema.png)
 
 ---
 
@@ -245,9 +225,8 @@ Créez un dashboard professionnel avec 3 pages interactives, navigation et 15+ v
 
 ## 💬 Questions ?
 
-- 💬 [Vidéo YouTube](LIEN_VIDEO)
-- 🐛 [Issues GitHub](../../issues)
-- 📧 nikiemaboubacar@ngroupmediadigital.com
+- 💬 [Vidéo YouTube](https://youtu.be/R-hUzsPNkSE)
+- 📧 nikiemaboubacar@gmail.com
 
 ---
 
