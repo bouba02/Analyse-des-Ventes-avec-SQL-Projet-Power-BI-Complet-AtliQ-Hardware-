@@ -193,6 +193,17 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 
 ## 📊 Aperçu du Dashboard
 
+### Page : Star Schema
+![STAR SCHEMA - ](PARTIE%203/Screen_StarShema.png)
+
+**Contenu :**
+- Relations One-to-Many uniquement
+- Configuration cardinalité (1:*, *:1)
+- Table des faits(Transactions)
+- 4 Tables de dimensions(customers, date, markets, products)
+
+---
+
 ### Page 1 : Key Insights
 ![Page 1 - Key Insights](PARTIE%205/Page1_KeyInsights.png)
 
