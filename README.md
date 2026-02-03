@@ -36,14 +36,14 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 
 | Partie | Titre | Durée | Lien |
 |--------|-------|-------|------|
-| 1️⃣ | Installation MySQL Workbench + Import Base de Données | 30 min | [▶️ Regarder](LIEN_PARTIE_1) |
-| 2️⃣ | Analyse Exploratoire SQL : 148K Transactions | 25 min | [▶️ Regarder](LIEN_PARTIE_2) |
-| 3️⃣ | Power BI : Import MySQL + ETL (2 Méthodes) | 22 min | [▶️ Regarder](LIEN_PARTIE_3) |
-| 4️⃣ | Star Schema + Relations + Mesures DAX | 17 min | [▶️ Regarder](LIEN_PARTIE_4) |
-| 5️⃣ | Dashboard Complet 3 Pages + Navigation | 1h03 | [▶️ Regarder](LIEN_PARTIE_5) |
+| 1️⃣ | Installation MySQL Workbench + Import Base de Données | 05 min | [▶️ Regarder](https://youtu.be/Dc6L-yYpQns) |
+| 2️⃣ | Analyse Exploratoire SQL : 148K Transactions | 22 min | [▶️ Regarder](https://youtu.be/HOA5HyNr-gw) |
+| 3️⃣ | Power BI : Import MySQL + ETL (2 Méthodes) | 22 min | [▶️ Regarder](https://youtu.be/mf8Tq-DVCGk) |
+| 4️⃣ | Star Schema + Relations + Mesures DAX | 17 min | [▶️ Regarder](https://youtu.be/R-hUzsPNkSE) |
+| 5️⃣ | Dashboard Complet 3 Pages + Navigation | 1h03 | [▶️ Regarder](https://youtu.be/UyaWq6GYT14) |
 | 6️⃣ | Publication Power BI Service + Partage | 22 min | [▶️ Regarder](LIEN_PARTIE_6) |
 
-🔗 **[Playlist Complète](LIEN_PLAYLIST)**
+🔗 **[Playlist Complète](https://www.youtube.com/playlist?list=PLQko_hl3lfZFX_OlkWrH6JD77iSRBspQj)**
 
 ---
 
@@ -352,7 +352,7 @@ Je vous aide à transformer vos données en décisions claires avec Power BI, SQ
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nikiemaboubacar@gmail.com)
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)]([LIEN_CHAINE_YOUTUBE](https://www.youtube.com/channel/UCxs2bzcEYXy91tUiFvI8dMw))
 
-**Portfolio :** [www.ngroupmediadigital.com](https://ngroupmediadigital.com)
+**Site Web :** [www.ngroupmediadigital.com](https://ngroupmediadigital.com)
 
 ---
 
