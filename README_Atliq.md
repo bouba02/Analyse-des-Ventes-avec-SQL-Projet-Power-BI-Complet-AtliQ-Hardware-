@@ -51,29 +51,29 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 
 ```
 📦 Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware
-├── 📁 PARTIE 1 - Installation MySQL
-│   ├── 📄 db_dump.sql (Base de données complète)
-│   ├── 📄 Guide_Installation_MySQL.pdf
-│   └── 📄 README.md
-│
-├── 📁 PARTIE 2 - Analyse SQL
-│   ├── 📄 requetes_exploratoires.sql
-│   ├── 📄 analyse_complete.sql
-│   └── 📄 README.md
+├── 📁 README.md
+│── 📄 db_dump_version_2_main.sql (Base de données complète)
+│── 📄 Resume_insight.pdf
+│── 📄 analyse_exploratoire.sql
 │
 ├── 📁 PARTIE 3 - Import Power BI
-│   ├── 📄 customers.csv
-│   ├── 📄 date.csv
-│   ├── 📄 markets.csv
-│   ├── 📄 products.csv
-│   ├── 📄 transactions.csv
+│   ├── 📄 DATA/customers.csv
+│   ├── 📄 DATA/date.csv
+│   ├── 📄 DATA/markets.csv
+│   ├── 📄 DATA/products.csv
+│   ├── 📄 DATA/transactions.csv
 │   ├── 📄 Guide_Import_MySQL_PowerBI.pdf
+│   ├── 📄 atliq.pbix
 │   └── 📄 README.md
 │
 ├── 📁 PARTIE 4 - Star Schema
-│   ├── 📄 Sales_Insights_StarSchema.pbix
+│   ├── 📄 atliq.pbix
 │   ├── 📄 Schema_Relations.png
-│   ├── 📄 Mesures_DAX.txt
+│   ├── 📄 DATA/customers.csv
+│   ├── 📄 DATA/date.csv
+│   ├── 📄 DATA/markets.csv
+│   ├── 📄 DATA/products.csv
+│   ├── 📄 DATA/transactions.csv
 │   └── 📄 README.md
 │
 ├── 📁 PARTIE 5 - Dashboard
@@ -82,7 +82,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 │   │   ├── Page1_KeyInsights.png
 │   │   ├── Page2_ProfitAnalysis.png
 │   │   └── Page3_PerformanceInsights.png
-│   ├── 📄 Palette_Couleurs.txt
+│   ├── 📄 Sales Insights_Dashboard Altiq_Final.pdf
 │   └── 📄 README.md
 │
 ├── 📁 PARTIE 6 - Publication
@@ -100,7 +100,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 
 ### 📊 Vue d'ensemble
 
-- **Entreprise** : AtliQ Hardware (fictive)
+- **Entreprise** : AtliQ Hardware 
 - **Secteur** : Vente de matériel informatique
 - **Période** : 2017-2020
 - **Transactions** : 148,000 lignes
