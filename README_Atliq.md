@@ -143,7 +143,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 
 | Métrique | Valeur |
 |----------|--------|
-| **Revenus Totaux** | ₹984.87M + $2.1M |
+| **Revenus Totaux** | ₹984.87M |
 | **Profit Total** | ₹24.7M |
 | **Marge Profit Moyenne** | 2.5% |
 | **Quantité Vendue** | 2M unités |
@@ -193,7 +193,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 ## 📊 Aperçu du Dashboard
 
 ### Page 1 : Key Insights
-![Page 1 - Key Insights](PARTIE%205/Screenshots/Page1_KeyInsights.png)
+![Page 1 - Key Insights](PARTIE%205/Page1_KeyInsights.png)
 
 **Contenu :**
 - 4 Cartes KPI (Revenue, Profit, Sales Qty, Profit Margin %)
@@ -206,7 +206,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 ---
 
 ### Page 2 : Profit Analysis
-![Page 2 - Profit Analysis](PARTIE%205/Screenshots/Page2_ProfitAnalysis.png)
+![Page 2 - Profit Analysis](PARTIE%205/Page2_ProfitAnalysis.png)
 
 **Contenu :**
 - 3 Cartes KPI Profit
@@ -217,7 +217,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 ---
 
 ### Page 3 : Performance Insights
-![Page 3 - Performance Insights](PARTIE%205/Screenshots/Page3_PerformanceInsights.png)
+![Page 3 - Performance Insights](PARTIE%205/Page3_PerformanceInsights.png)
 
 **Contenu :**
 - 4 Cartes KPI Performance
@@ -273,8 +273,6 @@ PARTIE 5/Sales_Insights_Dashboard_Final.pbix
 
 Chaque partie du projet contient un README détaillé :
 
-- 📄 [PARTIE 1 - Installation MySQL](PARTIE%201/README.md)
-- 📄 [PARTIE 2 - Analyse SQL](PARTIE%202/README.md)
 - 📄 [PARTIE 3 - Import Power BI](PARTIE%203/README.md)
 - 📄 [PARTIE 4 - Star Schema](PARTIE%204/README.md)
 - 📄 [PARTIE 5 - Dashboard](PARTIE%205/README.md)
@@ -282,34 +280,17 @@ Chaque partie du projet contient un README détaillé :
 
 ---
 
-## 🎨 Design & Palette Couleurs
-
-Le dashboard suit une charte graphique professionnelle :
-
-| Couleur | Hex Code | Usage |
-|---------|----------|-------|
-| **Bleu foncé** | `#2c3e50` | Header, titres, cartes KPI |
-| **Orange** | `#f39c12` | Highlights, boutons navigation |
-| **Vert** | `#27ae60` | Profit positif, métriques succès |
-| **Rouge** | `#e74c3c` | Alertes, profit négatif |
-| **Bleu clair** | `#3498db` | Graphiques principaux |
-| **Gris** | `#7f8c8d` | Textes secondaires |
-
-**Typographie :** Segoe UI (standard Power BI)
-
----
-
 ## 🔍 Insights Business Découverts
 
 ### 💰 Performance Globale
-- **Revenus totaux** : ₹984.87M (+ $2.1M USD)
+- **Revenus totaux** : ₹984.87M 
 - **Profit total** : ₹24.7M
 - **Marge profit moyenne** : 2.5% (faible → opportunités amélioration)
 
 ### 🏆 Top Performers
 - **Meilleur client** : Electricalsar Stores (₹413M - 42% revenus)
-- **Meilleur produit** : Prod318 (43,000 unités vendues)
-- **Meilleur marché** : Delhi NCR (52.8% revenus totaux)
+- **Meilleur produit** : Prod040 (16,1K unités vendues)
+- **Meilleur marché** : Delhi NCR (₹520M revenus totaux)
 
 ### 📉 Points d'Attention
 - **Marge profit faible** : 2.5% (objectif industrie : 5-10%)
@@ -368,10 +349,10 @@ Je vous aide à transformer vos données en décisions claires avec Power BI, SQ
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/boubacar-nikiema/)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bouba02)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nikiemaboubacar@ngroupmediadigital.com)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](LIEN_CHAINE_YOUTUBE)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nikiemaboubacar@gmail.com)
+[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)]([LIEN_CHAINE_YOUTUBE](https://www.youtube.com/channel/UCxs2bzcEYXy91tUiFvI8dMw))
 
-**Portfolio :** [ngroupmediadigital.com](https://ngroupmediadigital.com)
+**Portfolio :** [www.ngroupmediadigital.com](https://ngroupmediadigital.com)
 
 ---
 
@@ -382,8 +363,7 @@ Si ce projet vous a aidé, n'hésitez pas à :
 ⭐ **Star** ce repository  
 🔄 **Partager** avec vos collègues data  
 💬 **Commenter** vos suggestions  
-📺 **S'abonner** à la [chaîne YouTube](LIEN_CHAINE)  
-☕ **Offrir un café** (lien PayPal/Ko-fi si souhaité)
+📺 **S'abonner** à la [chaîne YouTube](https://www.youtube.com/channel/UCxs2bzcEYXy91tUiFvI8dMw)
 
 ---
 
