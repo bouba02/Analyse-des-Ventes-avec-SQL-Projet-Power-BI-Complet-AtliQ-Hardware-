@@ -80,10 +80,9 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 │
 ├── 📁 PARTIE 5 - Dashboard
 │   ├── 📄 Sales_Insights_Dashboard_Final.pbix
-│   ├── 📊 Screenshots/
-│   │   ├── Page1_KeyInsights.png
-│   │   ├── Page2_ProfitAnalysis.png
-│   │   └── Page3_PerformanceInsights.png
+│   ├── Page1_KeyInsights.png
+│   ├── Page2_ProfitAnalysis.png
+│   └── Page3_PerformanceInsights.png
 │   ├── 📄 Sales Insights_Dashboard Altiq_Final.pdf
 │   └── 📄 README.md
 │
