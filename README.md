@@ -55,6 +55,7 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 │── 📄 db_dump_version_2_main.sql (Base de données complète)
 │── 📄 Resume_insight.pdf
 │── 📄 analyse_exploratoire.sql
+│── 📄 README Business AtliQ_Hardware_Project.pdf
 │
 ├── 📁 PARTIE 3 - Import Power BI
 │   ├── 📄 DATA/customers.csv
@@ -91,7 +92,6 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 │   ├── 📄 Configuration_Actualisation.md
 │   └── 📄 README.md
 │
-├── 📄 LICENSE
 └── 📄 README.md (ce fichier)
 ```
 
