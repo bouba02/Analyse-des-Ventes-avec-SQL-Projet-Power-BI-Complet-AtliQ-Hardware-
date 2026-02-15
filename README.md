@@ -87,8 +87,8 @@ Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouT
 │   └── 📄 README.md
 │
 ├── 📁 PARTIE 6 - Publication
-│   ├── 📄 Guide_PowerBI_Service.pdf
-│   ├── 📄 Configuration_Actualisation.md
+│   ├── 📄 Guide_Publication_Power_BI_Service.pdf
+│   ├── 📄 Checklist_Pre_Publication.md
 │   └── 📄 README.md
 │
 └── 📄 README.md (ce fichier)
