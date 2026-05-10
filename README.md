@@ -96,7 +96,7 @@ Every step of the project is documented on video:
 | 3 | Power BI: MySQL import + ETL (2 methods) | 22 min | [Watch](https://youtu.be/mf8Tq-DVCGk) |
 | 4 | Star Schema + relationships + DAX measures | 17 min | [Watch](https://youtu.be/R-hUzsPNkSE) |
 | 5 | Full 3-page dashboard + navigation | 1h03 | [Watch](https://youtu.be/UyaWq6GYT14) |
-| 6 | Power BI Service publication + sharing | 22 min | Coming soon |
+| 6 | Power BI Service publication + sharing | 22 min | [Watch](https://youtu.be/ST5vT_mIycs?si=VkxF3eiJJjMKvcPT)|
 
 🎬 [Full Playlist](https://www.youtube.com/playlist?list=PLQko_hl3lfZFX_OlkWrH6JD77iSRBspQj)
 
