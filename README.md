@@ -1,459 +1,171 @@
-# 📊 Projet Power BI Complet : Analyse des Ventes AtliQ Hardware
+# AtliQ Hardware — End-to-End ETL Pipeline SQL → Power BI Reporting
 
-![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Complet-success?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
+> **MySQL → Power Query → Star Schema → Power BI Service · Full pipeline**  
+> 148,000 transactions · 5 tables · 15 markets · 3-page dashboard · 6-part YouTube series
 
-> **Dashboard interactif Power BI de bout en bout** : De l'installation MySQL à la publication en ligne, un projet complet d'analyse de 148,000 transactions commerciales.
+🇫🇷 [Version française disponible ici](README_FR.md)
 
 ---
 
-## 🎯 À Propos du Projet
+## Project Context
 
-Ce repository contient un **projet Power BI professionnel complet** développé de A à Z pour analyser les ventes de l'entreprise fictive **AtliQ Hardware**. 
-
-Le projet couvre l'intégralité du cycle de vie d'un projet Business Intelligence :
-- 📥 **Import** de données depuis MySQL
-- 🧹 **Nettoyage** et transformation (ETL) avec Power Query
-- 🔗 **Modélisation** Star Schema avec relations optimisées
-- 📊 **Visualisation** dashboard 3 pages interactif
-- ☁️ **Publication** Power BI Service en ligne
-
-### 📈 Résultat Final
-
-Un dashboard professionnel de 3 pages avec :
-- **15+ visualisations** interactives
-- **Navigation fluide** entre les pages
-- **Filtres synchronisés** multi-pages
-- **Métriques clés** : Revenus (₹985M), Profit (₹24.7M), Marge (2.5%)
+**Company:** AtliQ Hardware — computer hardware manufacturer & distributor (fictional dataset)  
+**Scope:** Sales analysis 2017–2020 · 15 cities in India · 38 clients · 279 products  
+**Goal:** Demonstrate full BI cycle mastery: from SQL extraction to production deployment  
+**Deliverables:** 3-page dashboard + 6-part video tutorial series documenting every step
 
 ---
 
-## 🎥 Tutoriel Vidéo Complet (6 Parties)
+## Business Problem
 
-Ce projet est accompagné d'une **série de tutoriels vidéo gratuits** sur YouTube :
+AtliQ Hardware's management had no consolidated visibility on commercial performance:
+revenue, margins, and market-level results were scattered across Excel files with
+no structured analysis.
 
-| Partie | Titre | Durée | Lien |
-|--------|-------|-------|------|
-| 1️⃣ | Installation MySQL Workbench + Import Base de Données | 05 min | [▶️ Regarder](https://youtu.be/Dc6L-yYpQns) |
-| 2️⃣ | Analyse Exploratoire SQL : 148K Transactions | 22 min | [▶️ Regarder](https://youtu.be/HOA5HyNr-gw) |
-| 3️⃣ | Power BI : Import MySQL + ETL (2 Méthodes) | 22 min | [▶️ Regarder](https://youtu.be/mf8Tq-DVCGk) |
-| 4️⃣ | Star Schema + Relations + Mesures DAX | 17 min | [▶️ Regarder](https://youtu.be/R-hUzsPNkSE) |
-| 5️⃣ | Dashboard Complet 3 Pages + Navigation | 1h03 | [▶️ Regarder](https://youtu.be/UyaWq6GYT14) |
-| 6️⃣ | Publication Power BI Service + Partage | 22 min | [▶️ Regarder](LIEN_PARTIE_6) |
-
-🔗 **[Playlist Complète](https://www.youtube.com/playlist?list=PLQko_hl3lfZFX_OlkWrH6JD77iSRBspQj)**
+**Questions the dashboard answers:**
+- Which markets and clients generate actual profit — not just revenue?
+- Where is the margin negative?
+- What is the client concentration risk exposure?
 
 ---
 
-## 📂 Structure du Repository
+## Business Insights Extracted
+
+| Insight | Detail |
+|---|---|
+| Critical concentration | **1 client = 42% of total revenue** (₹413M out of ₹985M) — major business risk |
+| Low margin | Average margin of **2.5%** — industry target: 5–10% |
+| Loss-making products | Several products show **negative margin** |
+| Geographic dominance | North Zone represents **65% of total revenue** — regional dependency |
+| Seasonal peak | Sales volumes consistently spike in **June–July** |
+| 2020 growth | **+15% vs 2019** despite market conditions |
+
+---
+
+## ETL Pipeline — MySQL to Power BI
 
 ```
-📦 Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware
-├── 📁 README.md
-│── 📄 db_dump_version_2_main.sql (Base de données complète)
-│── 📄 Resume_insight.pdf
-│── 📄 analyse_exploratoire.sql
-│── 📄 README Business AtliQ_Hardware_Project.pdf
-│
-├── 📁 PARTIE 3 - Import Power BI
-│   ├── 📄 DATA/customers.csv
-│   ├── 📄 DATA/date.csv
-│   ├── 📄 DATA/markets.csv
-│   ├── 📄 DATA/products.csv
-│   ├── 📄 DATA/transactions.csv
-│   ├── 📄 Guide_Import_MySQL_PowerBI.pdf
-│   ├── 📄 atliq.pbix
-│   ├── 📄 Screen_StarShema.png
-│   └── 📄 README.md
-│
-├── 📁 PARTIE 4 - Star Schema
-│   ├── 📄 atliq.pbix
-│   ├── 📄 Schema_Relations.png
-│   ├── 📄 DATA/customers.csv
-│   ├── 📄 DATA/date.csv
-│   ├── 📄 DATA/markets.csv
-│   ├── 📄 DATA/products.csv
-│   ├── 📄 DATA/transactions.csv
-│   └── 📄 README.md
-│
-├── 📁 PARTIE 5 - Dashboard
-│   ├── 📄 Sales_Insights_Dashboard_Final.pbix
+[MySQL Database]
+    ↓ Native Power BI connector / CSV export
+[Power Query]
+    ↓ Cleaning · Currency normalization (INR/USD) · Calculated columns
+[Power BI Star Schema]
+    ↓ Modeling · Relationships · DAX measures
+[3-Page Dashboard]
+    ↓ Published
+[Power BI Service]
+    → Live online report
+```
+
+### Data Model — Star Schema
+
+| Table | Type | Content |
+|---|---|---|
+| `transactions` | Fact | 148,000 rows · sales · quantities · amounts · currencies |
+| `customers` | Dimension | 38 clients · type (Brick & Mortar / E-Commerce) |
+| `markets` | Dimension | 15 cities · 3 geographic zones (North / South / Central) |
+| `products` | Dimension | 279 products · types |
+| `date` | Dimension | 2017–2020 calendar · year · month · short format |
+
+---
+
+## Dashboard — 3 Pages
+
+### Page 1 — Key Insights
+![Key Insights](PARTIE%205/Page1_KeyInsights.png)
+Global KPIs (Revenue ₹985M · Profit ₹24.7M · Margin 2.5% · Volume 2M units) · Revenue trends · Top 5 products & clients · Profit distribution by market · Revenue/profit matrix
+
+### Page 2 — Profit Analysis
+![Profit Analysis](PARTIE%205/Page2_ProfitAnalysis.png)
+Margin trend · Profit by geographic zone · Product profitability ranking with conditional formatting
+
+### Page 3 — Performance Insights
+![Performance Insights](PARTIE%205/Page3_PerformanceInsights.png)
+Volume by market · Monthly revenue trend · Top 5 clients (treemap) · Year over Year performance matrix
+
+---
+
+## YouTube Tutorial Series — 6 Parts
+
+Every step of the project is documented on video:
+
+| # | Step | Duration | Link |
+|---|---|---|---|
+| 1 | MySQL Workbench setup + database import | 5 min | [Watch](https://youtu.be/Dc6L-yYpQns) |
+| 2 | SQL exploratory analysis — 148K transactions | 22 min | [Watch](https://youtu.be/HOA5HyNr-gw) |
+| 3 | Power BI: MySQL import + ETL (2 methods) | 22 min | [Watch](https://youtu.be/mf8Tq-DVCGk) |
+| 4 | Star Schema + relationships + DAX measures | 17 min | [Watch](https://youtu.be/R-hUzsPNkSE) |
+| 5 | Full 3-page dashboard + navigation | 1h03 | [Watch](https://youtu.be/UyaWq6GYT14) |
+| 6 | Power BI Service publication + sharing | 22 min | Coming soon |
+
+🎬 [Full Playlist](https://www.youtube.com/playlist?list=PLQko_hl3lfZFX_OlkWrH6JD77iSRBspQj)
+
+---
+
+## Tech Stack
+
+- **MySQL 8.0** — database storage and SQL exploratory analysis
+- **Power BI Desktop + Power BI Service** — modeling, dashboard, production deployment
+- **Power Query / M** — ETL pipeline, cleaning, currency normalization
+- **DAX** — calculated measures (revenue, profit, margin, YoY)
+
+---
+
+## Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/bouba02/Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware-.git
+
+# 2. Import MySQL database
+# MySQL Workbench → File → Run SQL Script → db_dump_version_2_main.sql
+
+# 3. Open the dashboard
+# PARTIE 5/Sales_Insights_Dashboard_Final.pbix
+# (No MySQL? Import CSV files from PARTIE 3/DATA/ instead)
+```
+
+---
+
+## Repository Structure
+
+```
+AtliQ-Hardware/
+├── README.md
+├── README_FR.md
+├── db_dump_version_2_main.sql
+├── analyse_exploratoire.sql
+├── PARTIE 3 - Import Power BI/
+│   ├── DATA/ (customers · date · markets · products · transactions .csv)
+│   ├── atliq.pbix
+│   └── Guide_Import_MySQL_PowerBI.pdf
+├── PARTIE 4 - Star Schema/
+│   ├── atliq.pbix
+│   └── Schema_Relations.png
+├── PARTIE 5 - Dashboard/
+│   ├── Sales_Insights_Dashboard_Final.pbix
 │   ├── Page1_KeyInsights.png
 │   ├── Page2_ProfitAnalysis.png
 │   └── Page3_PerformanceInsights.png
-│   ├── 📄 Sales Insights_Dashboard Altiq_Final.pdf
-│   └── 📄 README.md
-│
-├── 📁 PARTIE 6 - Publication
-│   ├── 📄 Guide_Publication_Power_BI_Service.pdf
-│   ├── 📄 Checklist_Pre_Publication.md
-│   └── 📄 README.md
-│
-└── 📄 README.md (ce fichier)
+└── PARTIE 6 - Publication/
+    └── Guide_Publication_Power_BI_Service.pdf
 ```
 
 ---
 
-## 💾 Dataset : AtliQ Hardware
+## Author
 
-### 📊 Vue d'ensemble
+**Boubacar Nikiema** — Data Analyst & BI Consultant
 
-- **Entreprise** : AtliQ Hardware 
-- **Secteur** : Vente de matériel informatique
-- **Période** : 2017-2020
-- **Transactions** : 148,000 lignes
-- **Marchés** : 15 villes en Inde
-- **Devises** : INR (Roupies indiennes) et USD
+Specialized in financial dashboards, sales & supply chain analytics and ETL pipelines
+using Power BI, SQL, Python and Excel. Based in Morocco, working with clients across
+Africa and French-speaking Europe.
 
-### 🗂️ Structure de la Base de Données (5 Tables)
-
-#### 1. **transactions** (Table de faits)
-- `product_code` : Code produit
-- `customer_code` : Code client
-- `market_code` : Code marché
-- `order_date` : Date commande
-- `sales_qty` : Quantité vendue
-- `sales_amount` : Montant (INR ou USD)
-- `currency` : Devise (INR/USD)
-
-#### 2. **customers** (Dimension)
-- `customer_code` : Identifiant client
-- `customer_name` : Nom client
-- `customer_type` : Type (Brick & Mortar, E-Commerce)
-
-#### 3. **markets** (Dimension)
-- `market_code` : Identifiant marché
-- `market_name` : Nom ville
-- `zone` : Zone géographique (North, South, Central)
-
-#### 4. **products** (Dimension)
-- `product_code` : Identifiant produit
-- `product_type` : Type produit
-
-#### 5. **date** (Dimension)
-- `date` : Date
-- `cy_date` : Date calendrier
-- `year` : Année
-- `month_name` : Nom mois
-- `date_yy_mmm` : Format court
-
-### 📈 Métriques Clés
-
-| Métrique | Valeur |
-|----------|--------|
-| **Revenus Totaux** | ₹984.87M |
-| **Profit Total** | ₹24.7M |
-| **Marge Profit Moyenne** | 2.5% |
-| **Quantité Vendue** | 2M unités |
-| **Nombre Clients** | 38 |
-| **Nombre Produits** | 279 |
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-boubacar--nikiema-blue?logo=linkedin)](https://linkedin.com/in/boubacar-nikiema)
+[![YouTube](https://img.shields.io/badge/YouTube-BoubacarDataAnalyst-red?logo=youtube)](https://youtube.com/@BoubacarDataAnalyst)
+[![Email](https://img.shields.io/badge/Email-nikiemaboubacar%40gmail.com-gray?logo=gmail)](mailto:nikiemaboubacar@gmail.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-data.ngroupmediadigital.com-green)](https://data.ngroupmediadigital.com)
 
 ---
 
-## 🛠️ Technologies Utilisées
-
-| Technologie | Usage | Niveau |
-|-------------|-------|--------|
-| **MySQL 8.0** | Stockage et requêtes SQL | ⭐⭐⭐ |
-| **MySQL Workbench** | Interface administration base | ⭐⭐⭐ |
-| **Power BI Desktop** | Modélisation et visualisation | ⭐⭐⭐⭐⭐ |
-| **Power Query (M)** | ETL et transformation données | ⭐⭐⭐⭐ |
-| **DAX** | Mesures calculées | ⭐⭐⭐ |
-| **Power BI Service** | Publication en ligne | ⭐⭐⭐ |
-
----
-
-## 🎓 Compétences Démontrées
-
-### 📊 Business Intelligence
-- ✅ Analyse exploratoire de données
-- ✅ Modélisation Star Schema
-- ✅ Design de dashboards interactifs
-- ✅ KPIs et métriques business
-
-### 🔧 Techniques
-- ✅ Extraction SQL (SELECT, JOIN, GROUP BY, ORDER BY)
-- ✅ ETL avec Power Query (nettoyage, transformation)
-- ✅ Création relations Many-to-One
-- ✅ Mesures DAX (SUM, CALCULATE, DIVIDE)
-- ✅ Filtres et slicers synchronisés
-- ✅ Navigation multi-pages (bookmarks)
-- ✅ Mise en forme conditionnelle
-
-### 💼 Professionnalisme
-- ✅ Documentation complète (README, PDF)
-- ✅ Code commenté et structuré
-- ✅ Design cohérent et épuré
-- ✅ Bonnes pratiques BI
-
----
-
-## 📊 Aperçu du Dashboard
-
-### Page : Star Schema
-![STAR SCHEMA - ](PARTIE%203/Screen_StarShema.png)
-
-**Contenu :**
-- Relations One-to-Many uniquement
-- Configuration cardinalité (1:*, *:1)
-- Table des faits(Transactions)
-- 4 Tables de dimensions(customers, date, markets, products)
-
----
-
-### Page 1 : Key Insights
-![Page 1 - Key Insights](PARTIE%205/Page1_KeyInsights.png)
-
-**Contenu :**
-- 4 Cartes KPI (Revenue, Profit, Sales Qty, Profit Margin %)
-- Revenue Trends (graphique barres + ligne)
-- Top 5 Products & Top 5 Customers
-- Profit Distribution by Market (donut)
-- Matrice Revenue/Profit par marché
-- Slicers Year + Month
-
----
-
-### Page 2 : Profit Analysis
-![Page 2 - Profit Analysis](PARTIE%205/Page2_ProfitAnalysis.png)
-
-**Contenu :**
-- 3 Cartes KPI Profit
-- Profit Margin Evolution (ligne)
-- Profit by Geographic Zone (barres)
-- Products Profitability Ranking (table + mise en forme conditionnelle)
-
----
-
-### Page 3 : Performance Insights
-![Page 3 - Performance Insights](PARTIE%205/Page3_PerformanceInsights.png)
-
-**Contenu :**
-- 4 Cartes KPI Performance
-- Sales Qty by Market (barres)
-- Monthly Revenue Trend (ligne)
-- Top 5 Customers (treemap)
-- Year over Year Performance (matrice)
-
----
-
-## 🚀 Installation & Utilisation
-
-### Prérequis
-
-- **Windows 10/11, Mac OS, ou Linux**
-- **MySQL 8.0+** ([Télécharger](https://dev.mysql.com/downloads/mysql/))
-- **MySQL Workbench** ([Télécharger](https://dev.mysql.com/downloads/workbench/))
-- **Power BI Desktop** ([Télécharger](https://powerbi.microsoft.com/desktop/))
-
-### Étape 1 : Installation Base de Données
-
-```bash
-# 1. Cloner le repository
-git clone https://github.com/bouba02/Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware-.git
-
-# 2. Importer la base dans MySQL Workbench
-# Fichier → Run SQL Script → Sélectionner "PARTIE 1/db_dump.sql"
-```
-
-### Étape 2 : Ouvrir le Dashboard Power BI
-
-```bash
-# Option A : Ouvrir le fichier final complet
-PARTIE 5/Sales_Insights_Dashboard_Final.pbix
-
-# Option B : Importer depuis MySQL (Windows x64 uniquement)
-# Suivre le guide : PARTIE 3/Guide_Import_MySQL_PowerBI.pdf
-
-# Option C : Importer depuis CSV (Mac/Linux/Windows ARM)
-# Fichiers CSV disponibles dans : PARTIE 3/*.csv
-```
-
-### Étape 3 : Actualiser les Données
-
-1. Ouvrir le fichier `.pbix` dans Power BI Desktop
-2. Cliquer sur **Accueil** → **Actualiser**
-3. Si connexion MySQL : Vérifier que le serveur MySQL est démarré
-4. Si fichiers CSV : Mettre à jour les chemins si nécessaire
-
----
-
-## 📖 Guides Détaillés
-
-Chaque partie du projet contient un README détaillé :
-
-- 📄 [PARTIE 3 - Import Power BI](PARTIE%203/README.md)
-- 📄 [PARTIE 4 - Star Schema](PARTIE%204/README.md)
-- 📄 [PARTIE 5 - Dashboard](PARTIE%205/README.md)
-- 📄 [PARTIE 6 - Publication](PARTIE%206/README.md)
-
----
-
-## 🔍 Insights Business Découverts
-
-### 💰 Performance Globale
-- **Revenus totaux** : ₹984.87M 
-- **Profit total** : ₹24.7M
-- **Marge profit moyenne** : 2.5% (faible → opportunités amélioration)
-
-### 🏆 Top Performers
-- **Meilleur client** : Electricalsar Stores (₹413M - 42% revenus)
-- **Meilleur produit** : Prod040 (16,1K unités vendues)
-- **Meilleur marché** : Delhi NCR (₹520M revenus totaux)
-
-### 📉 Points d'Attention
-- **Marge profit faible** : 2.5% (objectif industrie : 5-10%)
-- **Concentration risque** : 1 client = 42% revenus
-- **Produits négatifs** : Certains produits en perte (marge < 0%)
-
-### 📊 Tendances
-- **Croissance 2020** : +15% vs 2019
-- **Saisonnalité** : Pic ventes en juin-juillet
-- **Zone géographique** : North Zone domine (65% revenus)
-
----
-
-## 🤝 Contribution
-
-Les contributions sont les bienvenues ! Si vous souhaitez améliorer ce projet :
-
-1. **Fork** le repository
-2. Créez une **branche** pour votre fonctionnalité (`git checkout -b feature/AmeliorationDashboard`)
-3. **Commit** vos changements (`git commit -m 'Ajout nouvelle page dashboard'`)
-4. **Push** vers la branche (`git push origin feature/AmeliorationDashboard`)
-5. Ouvrez une **Pull Request**
-
-### Idées de Contributions
-
-- 🌍 Traduire le dashboard en anglais
-- 📊 Ajouter de nouvelles métriques DAX
-- 🎨 Proposer des variantes de design
-- 📝 Améliorer la documentation
-- 🐛 Corriger des bugs
-
----
-
-## 📜 License
-
-Ce projet est sous license **MIT**. Vous êtes libre de :
-- ✅ Utiliser ce projet à des fins personnelles ou commerciales
-- ✅ Modifier et adapter le code/dashboard
-- ✅ Distribuer et partager
-- ✅ Utiliser dans votre portfolio
-
-**Attribution appréciée mais non obligatoire.**
-
-Voir le fichier [LICENSE](LICENSE) pour plus de détails.
-
----
-
-## 👨‍💼 Auteur
-
-**BOUBACAR NIKIEMA**  
-Data Analyst | Master Big Data & Cloud Computing
-
-Je vous aide à transformer vos données en décisions claires avec Power BI, SQL, Excel et Python.
-
-### 🔗 Me Contacter
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/boubacar-nikiema/)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bouba02)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:nikiemaboubacar@gmail.com)
-[![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)]([LIEN_CHAINE_YOUTUBE](https://www.youtube.com/channel/UCxs2bzcEYXy91tUiFvI8dMw))
-
-**Site Web :** [www.ngroupmediadigital.com](https://ngroupmediadigital.com)
-
----
-
-## 🌟 Soutenez le Projet
-
-Si ce projet vous a aidé, n'hésitez pas à :
-
-⭐ **Star** ce repository  
-🔄 **Partager** avec vos collègues data  
-💬 **Commenter** vos suggestions  
-📺 **S'abonner** à la [chaîne YouTube](https://www.youtube.com/channel/UCxs2bzcEYXy91tUiFvI8dMw)
-
----
-
-## 📚 Ressources Complémentaires
-
-### Power BI
-- [Documentation officielle Microsoft](https://docs.microsoft.com/power-bi/)
-- [DAX Guide](https://dax.guide/)
-- [Power BI Community](https://community.powerbi.com/)
-
-### SQL
-- [MySQL Documentation](https://dev.mysql.com/doc/)
-- [SQL Tutorial W3Schools](https://www.w3schools.com/sql/)
-
-### Datasets Similaires
-- [Kaggle - Sales Datasets](https://www.kaggle.com/datasets?search=sales)
-- [Microsoft Sample Databases](https://docs.microsoft.com/sql/samples/)
-
----
-
-## 📊 Statistiques du Projet
-
-![GitHub stars](https://img.shields.io/github/stars/bouba02/Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware-?style=social)
-![GitHub forks](https://img.shields.io/github/forks/bouba02/Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware-?style=social)
-![GitHub watchers](https://img.shields.io/github/watchers/bouba02/Analyse-des-Ventes-avec-SQL-Projet-Power-BI-Complet-AtliQ-Hardware-?style=social)
-
----
-
-## ❓ FAQ
-
-**Q : Je n'ai jamais utilisé Power BI, je peux suivre ?**  
-R : OUI ! La série vidéo part de ZÉRO. Partie 1 = installation.
-
-**Q : Ça marche sur Mac ?**  
-R : Power BI Desktop est Windows uniquement, MAIS vous pouvez utiliser Parallels/VMware ou importer les CSV dans un autre outil BI.
-
-**Q : Les données sont réelles ?**  
-R : Non, c'est un dataset fictif créé pour l'apprentissage. Structure réaliste, données générées.
-
-**Q : Je peux utiliser ce projet dans mon portfolio ?**  
-R : OUI ! C'est fait pour. Clonez, personnalisez, ajoutez à votre portfolio.
-
-**Q : Combien de temps pour compléter le projet ?**  
-R : Environ 3-5 heures si vous suivez les vidéos. Plus si vous reproduisez seul.
-
----
-
-## 🎯 Prochaines Étapes
-
-Après avoir complété ce projet, vous pouvez :
-
-1. **Personnaliser** le dashboard (couleurs, visuels)
-2. **Ajouter** de nouvelles pages (Customer Analysis, Product Deep Dive)
-3. **Créer** de nouvelles mesures DAX (YoY Growth, Moving Average)
-4. **Publier** sur Power BI Service et partager le lien
-5. **Utiliser** vos propres données (remplacer AtliQ par vos données réelles)
-
----
-
-## 📝 Changelog
-
-### Version 1.0.0 (Février 2026)
-- ✅ Release initiale complète
-- ✅ 6 parties documentées
-- ✅ Dashboard 3 pages opérationnel
-- ✅ Série vidéo YouTube complète
-
----
-
-<div align="center">
-
-**Fait avec ❤️ et beaucoup de ☕ par Boubacar NIKIEMA**
-
-⭐ **Si ce projet vous a aidé, n'oubliez pas de star le repo !** ⭐
-
-</div>
-
----
-
-**Dernière mise à jour :** Février 2026  
-**Version :** 1.0.0  
-**Status :** ✅ Production Ready
+*Fictional dataset — AtliQ Hardware is a simulated company created for educational purposes · Code: MIT License*
